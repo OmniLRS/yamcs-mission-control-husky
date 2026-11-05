@@ -5,7 +5,7 @@ from yamcs.client import YamcsClient
 
 # Configuration constants
 YAMCS_HOST = "localhost:8090"
-YAMCS_INSTANCE = "workshop"
+YAMCS_INSTANCE = "husky"
 YAMCS_PROCESSOR = "realtime"
 SLEEP_INTERVAL = 1  # in seconds
 

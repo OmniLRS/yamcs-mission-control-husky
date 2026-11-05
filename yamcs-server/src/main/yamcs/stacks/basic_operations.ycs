@@ -6,64 +6,21 @@
   "steps": [
     {
       "type": "command",
-      "name": "/Rover/system/go_nogo_command",
+      "name": "/Rover/camera/camera_streaming",
       "arguments": [
-        { "name": "decision", "value": "GO" }
+        { "name": "camera_name", "value": "cam_color" },
+        { "name": "action", "value": "START" }
       ],
-      "comment": "GO (required to drive)"
+      "comment": "Start streaming the color camera"
     },
     {
       "type": "verify",
-      "comment": "Rover is GO",
+      "comment": "Camera stream is ON (cam_color)",
       "condition": [
-        { "parameter": "/Rover/go_nogo", "operator": "eq", "value": "GO" }
-      ],
-      "delay": 0,
-      "timeout": 60000
-    },
-    {
-      "type": "command",
-      "name": "/Rover/system/deploy_solar_panel",
-      "arguments": [
-        { "name": "deployment", "value": "DEPLOY" }
-      ],
-      "comment": "Deploy the solar panel"
-    },
-    {
-      "type": "verify",
-      "comment": "Solar panel is deployed",
-      "condition": [
-        { "parameter": "/Rover/solar_panel_state", "operator": "eq", "value": "DEPLOYED" }
+        { "parameter": "/Rover/camera/cam_color/streaming/state", "operator": "eq", "value": "ON" }
       ],
       "delay": 0,
       "timeout": 15000
-    },
-    {
-      "type": "command",
-      "name": "/Rover/power/power_electronics",
-      "arguments": [
-        { "name": "subsystem_id", "value": "CAMERA" },
-        { "name": "power_state", "value": "ON" }
-      ],
-      "comment": "Power on the camera (starts the stream)"
-    },
-    {
-      "type": "verify",
-      "comment": "Camera stream is ON",
-      "condition": [
-        { "parameter": "/Rover/camera/images_streaming/state", "operator": "eq", "value": "ON" }
-      ],
-      "delay": 0,
-      "timeout": 15000
-    },
-    {
-      "type": "command",
-      "name": "/Rover/power/power_electronics",
-      "arguments": [
-        { "name": "subsystem_id", "value": "MOTOR_CONTROLLER" },
-        { "name": "power_state", "value": "ON" }
-      ],
-      "comment": "Power on the motor controller (required to drive)"
     },
     {
       "type": "check",
