@@ -341,20 +341,19 @@ motor_current = MDB.ArrayParameter(
     system=rover,
     name="motor_current",
     data_type=MDB.FloatDataType(bits=32, units="A", minimum=0.0),
-    length=6,
+    length=4,
     data_source=MDB.DataSource.LOCAL,
-    short_description="Array of motor current readings for the six wheels",
+    short_description="Array of motor current readings for the four wheels",
 )
 
 motor_encoder = MDB.ArrayParameter(
     system=rover,
     name="motor_encoder",
     data_type=MDB.IntegerDataType(signed=False, bits=16, minimum=0, maximum=1024, units="counts"),
-    length=6,
+    length=4,
     data_source=MDB.DataSource.LOCAL,
-    short_description="Array of motor encoder positions for the six wheels",
+    short_description="Array of motor encoder positions for the four wheels",
 )
-
 # Radio
 radio_rssi = MDB.IntegerParameter(
     system=rover,
