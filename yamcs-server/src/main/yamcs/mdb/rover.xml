@@ -130,7 +130,7 @@ See https://docs.yamcs.org/pymdb/
               <FixedValue>0</FixedValue>
             </StartingIndex>
             <EndingIndex>
-              <FixedValue>5</FixedValue>
+              <FixedValue>3</FixedValue>
             </EndingIndex>
           </Dimension>
         </DimensionList>
@@ -148,7 +148,7 @@ See https://docs.yamcs.org/pymdb/
               <FixedValue>0</FixedValue>
             </StartingIndex>
             <EndingIndex>
-              <FixedValue>5</FixedValue>
+              <FixedValue>3</FixedValue>
             </EndingIndex>
           </Dimension>
         </DimensionList>
@@ -342,10 +342,10 @@ See https://docs.yamcs.org/pymdb/
       <Parameter name="imu_orientation" parameterTypeRef="imu_orientation" shortDescription="Orientation data with roll, pitch, and yaw">
         <ParameterProperties dataSource="local" persistence="true"/>
       </Parameter>
-      <Parameter name="motor_current" parameterTypeRef="motor_current" shortDescription="Array of motor current readings for the six wheels">
+      <Parameter name="motor_current" parameterTypeRef="motor_current" shortDescription="Array of motor current readings for the four wheels">
         <ParameterProperties dataSource="local" persistence="true"/>
       </Parameter>
-      <Parameter name="motor_encoder" parameterTypeRef="motor_encoder" shortDescription="Array of motor encoder positions for the six wheels">
+      <Parameter name="motor_encoder" parameterTypeRef="motor_encoder" shortDescription="Array of motor encoder positions for the four wheels">
         <ParameterProperties dataSource="local" persistence="true"/>
       </Parameter>
       <Parameter name="obc_cpu_usage" parameterTypeRef="obc_cpu_usage" shortDescription="On-Board Computer CPU usage">
